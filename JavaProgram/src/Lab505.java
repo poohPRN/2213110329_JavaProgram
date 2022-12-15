@@ -20,7 +20,7 @@ public class Lab505 {
 		}//end while Loop
 		isITStudent(studentID);
 		isITSubject(subjectID);
-		displayData(isITStudent(studentID),isITSubject(subjectID));
+		//displayData(isITStudent(studentID),isITSubject(subjectID));
 	}
 	
 	public static boolean isLength(String stid,String sjid) {
