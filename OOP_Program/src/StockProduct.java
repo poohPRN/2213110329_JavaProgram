@@ -1,34 +1,42 @@
 import java.util.*;
+import java.text.*;
 public class StockProduct {
 	static Scanner scan = new Scanner(System.in);
-	//static Product pd = new Product();
+	static Product pd = new Product();
+	
 	public static void main(String[] args) {
 		Product[] productList = new Product[4];
-		for(Product pd : productList) {
-			pd = new Product();
+		DecimalFormat frm = new DecimalFormat("#,###.00");
+		for(int i = 0;i<productList.length;i++) {
+			productList[i] = new Product();
 			System.out.print("Input product Id : ");
-			pd.setId(scan.next());
+			productList[i].setId(scan.next());
 			System.out.print("Input product Unit : ");
-			int item = scan.nextInt();
-			pd.setUnit(item);
-			while(item<=0) {
+			int unit = scan.nextInt();
+			productList[i].setUnit(unit);
+			while(unit <=0 ) {
 				System.out.print("Input product Unit, again : ");
-				item = scan.nextInt();
-				pd.setUnit(item);
+				unit = scan.nextInt();
+				productList[i].setUnit(unit);
 			}
 			System.out.print("Input product Price : ");
-			double money = scan.nextDouble();
-			pd.setPrice(money);
-			while(money<=0) {
+			double price = scan.nextDouble();
+			productList[i].setPrice(price);
+			while(price <= 0) {
 				System.out.print("Input product Price, again : ");
-				money = scan.nextDouble();
-				pd.setPrice(money);
-			}
+				unit = scan.nextInt();
+				productList[i].setUnit(unit);
+			}//end for()
 			System.out.println();
-		}//end for
-		System.out.println("-------------------------------");
-		for (Product pd:productList) {
-			System.out.println("Product ID : "+pd.getid()+" Total price ="+pd.calculate());
+		}//end for()
+		System.out.println("---------------------------------------------------");
+		double sum = 0;
+		for(Product PL : productList) {
+			System.out.println("Product ID : "+ PL.getid()+", "+"Total price = "+frm.format(PL.calculate())+" baht.");
+			sum += PL.calculate();
 		}
+		System.out.println("---------------------------------------------------");
+		
+		System.out.println("Total price of all products is "+frm.format(sum)+" baht.");
 	}
 }
