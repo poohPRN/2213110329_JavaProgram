@@ -1,36 +1,21 @@
 
 public class Product {
-
-	private String id;
 	private int unit;
-	private double price;
 	
-	public void setId(String ID) {
-		id = ID;
-	}
-	
-	public String getid() {
-		return id;
-	}
-	
-	public void setUnit(int UNIT) {
-		unit = UNIT;
+	public void setUnit(int unit) {
+		this.unit = unit;
 	}
 	
 	public int getUnit() {
-		return unit;
+		return this.unit;
 	}
 	
-	public void setPrice(double PRICE) {
-		price = PRICE;
+	public int getTotalprice() {
+		return getUnit() * 100;
 	}
 	
-	public double getPrice() {
-		return price;
-	}
-	
-	public double calculate() {
-		double total = unit*price;
-		return total;
+	public String toString() {
+		return "You buy"+getUnit()+" units ("+ getTotalprice()+ ")";
 	}
 }
+

@@ -1,0 +1,5 @@
+data :26-Jan-2023
+Student ID:2213110329
+Fullname:Purinut Orachunwong
+AKA:pooh
+ClassDetail:Composition and Inheritance
